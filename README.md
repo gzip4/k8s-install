@@ -7,8 +7,10 @@ https://kubernetes.io/releases/download/
 https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/
 
 ### Apt proxy
-Add file /etc/apt/apt.conf.d/proxy.conf with line:
+Add file /etc/apt/apt.conf.d/proxy.conf with the line:
+```
 Acquire::http::Proxy "socks5h://user:pass@host:port/";
+```
 
 ### After `kubeadm reset`
 1. clean iptables up
