@@ -9,3 +9,14 @@ https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/
 ### Apt proxy
 Add file /etc/apt/apt.conf.d/proxy.conf with line:
 Acquire::http::Proxy "socks5h://user:pass@host:port/";
+
+### After `kubeadm reset`
+1. clean iptables up
+   ```
+   sudo iptables -F
+   sudo iptables -X
+   ```
+1. remove cni0 bridge
+   ```
+   sudo ip link delete cni0
+   ```
